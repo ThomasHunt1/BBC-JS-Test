@@ -6,13 +6,16 @@ function loadDoc(article) {
     // Show the next button if there is another article
     if(currentArticle === 5){
         document.getElementsByTagName('footer').item(0).innerHTML =
-            '<button formaction="rank.html" type="submit">Rank the articles</button>';
+            '<button ><a href="rank.html">Rank articles</a></button>';
     }else if(currentArticle < 5 && currentArticle > 0){
         document.getElementsByTagName('footer').item(0).innerHTML =
             '<button onclick="nextArticle()">Next article</button>';
     }else{
         console.log("The current article number exceed the boundaries! currentArticle: " + currentArticle);
     }
+
+    // Set the title
+    document.title = "BBC Coding Test | Article " + currentArticle;
 
     const xhr = new XMLHttpRequest();
     xhr.open('get', 'articles/article-'+currentArticle+'.json');
@@ -31,7 +34,6 @@ function loadDoc(article) {
                 const jsonData = JSON.parse(xhr.responseText).body;
                 let x;
                 for (x = 0; x < jsonData.length; x++) {
-                    console.log(x);
                     let type = jsonData[x].type;
                     switch (type) {
                         case 'heading' :
