@@ -1,0 +1,64 @@
+body{
+    font-family: Arial, serif;
+
+}
+
+main{
+    margin: 0 25%;
+    padding: 0 2rem 2rem 2rem;
+    background-color: gainsboro;
+    min-width: 40rem;
+}
+
+header{
+    color: white;
+    background-color: firebrick;
+    font-weight: bold;
+    font-size: 5rem;
+    width: 100%;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+P{
+    font-size: 1.5rem;
+}
+
+ul,ol{
+    border-radius: 5px;
+    background-color: mistyrose;
+    font-size: 1.5rem;
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+button{
+    font-size: 1.5rem;
+    text-align: center;
+    border: 1px solid black;
+    background-color: firebrick;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+}
+
+button:hover{
+    background-color: white;
+    color: firebrick;
+    transition-duration: 0.5s;
+}
+
+a{
+    text-decoration: inherit;
+    color: inherit;
+}
