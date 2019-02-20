@@ -6,12 +6,24 @@
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title>BBC Coding Test | Rank articles</title>
 </head>
-<body onload="displayArticles()">
+<body onload="loadArticleStub(1)">
 <header>BBC news</header>
-<main >
-    <ul id="articleList">
+<main>
+    <h1>What did you think of this article?</h1>
+    <article id="articleStub"></article>
+    <footer style="display: block; text-align: center">
+        <section>
+            <button class="rateButton" onclick="setRating(1)">&#9733</button>
+            <button class="rateButton" onclick="setRating(2)">&#9733</button>
+            <button class="rateButton" onclick="setRating(3)">&#9733</button>
+            <button class="rateButton" onclick="setRating(4)">&#9733</button>
+            <button class="rateButton" onclick="setRating(5)">&#9733</button>
+        </section>
+        <br>
 
-    </ul>
+        <button onclick="rateArticle()">Submit</button>
+
+    </footer>
 </main>
 </body>
 </html>

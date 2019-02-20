@@ -62,14 +62,15 @@ a{
     text-decoration: inherit;
     color: inherit;
 }
-#articleList{
-    list-style: none;
 
+#articleStub{
+    height: 6rem;
+    vertical-align: middle;
 }
 
-.articleListItem{
-    height: 5rem;
-
+#articleStub p{
+    line-height: 6rem;
+    background-color: mistyrose;
 }
 
 .thumbnail{
@@ -77,4 +78,24 @@ a{
     height: 4rem;
     float: left;
     margin: 1rem;
+    font-size: xx-small;
+}
+
+.rateButton{
+    font-size: 2rem;
+    text-align: center;
+    vertical-align: center;
+    background-color: inherit;
+    color: gray;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+}
+
+.rateButton:focus, .rateButton:hover{
+    border-radius: 50%;
+    background-color: white;
+    color: gold;
+    transition-duration: 0.5s;
+    outline: 0;
 }
