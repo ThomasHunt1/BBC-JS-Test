@@ -3,16 +3,10 @@ var currentArticle = 0, currentRating = 0;
 function loadArticleStub(article) {
     currentArticle = article;
 
-    // Show the next button if there is another article
-    // if(currentArticle === 5){
-    //     document.getElementsByTagName('footer').item(0).innerHTML =
-    //         '<button ><a href="rank.html">Rank articles</a></button>';
-    // }else if(currentArticle < 5 && currentArticle > 0){
-    //     document.getElementsByTagName('footer').item(0).innerHTML =
-    //         '<button onclick="nextArticle()">Next article</button>';
-    // }else{
-    //     console.log("The current article number exceed the boundaries! currentArticle: " + currentArticle);
-    // }
+    // Clear old rating before adding new ones
+    if(currentArticle === 1){
+        clearXML();
+    }
 
     // Set the title
     document.title = "BBC Coding Test | Rating " + currentArticle;
@@ -66,31 +60,50 @@ function loadArticleStub(article) {
 }
 
 function rateArticle() {
-    // Submit the rating
-    submitRating();
-
-    // Load the next article
-    if (currentArticle < 5 && currentArticle > 0) {
-        loadArticleStub(currentArticle + 1);
-    } else if (currentArticle === 5) {
-        window.location.href = "displayRatings.php";
+    if (currentRating !== 0) {
+        // Submit the rating
+        submitRating();
+        // Load the next article
+        if (currentArticle < 5 && currentArticle > 0) {
+            setRating(0);
+            loadArticleStub(currentArticle + 1);
+        } else if (currentArticle === 5) {
+            window.location.href = "displayRatings.html";
+        } else {
+            console.log("The current article number exceed the boundaries! currentArticle: " + currentArticle);
+        }
     } else {
-        console.log("The current article number exceed the boundaries! currentArticle: " + currentArticle);
+      alert('Select a rating');
     }
 }
 
-    function setRating(rating) {
-        currentRating = rating;
-    }
+function setRating(rating) {
+    currentRating = rating;
+}
 
-    function submitRating() {
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'displayRatings.php', true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onload = function () {
-            // do something to response
-            console.log(this.responseText);
-        };
-        //xhr.send('user=person&pwd=password&organization=place&requiredkey=key');
-        xhr.send("article=" + currentArticle + "&rating=" + currentRating);
-    }
+function submitRating() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'appendRating.php', true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function () {
+        // do something to response
+        console.log(this.responseText);
+    };
+    xhr.send("article=" + currentArticle + "&rating=" + currentRating);
+}
+
+function clearXML() {
+    var clearReq = new XMLHttpRequest();
+    clearReq.open('get', 'clearRatings.php');
+    clearReq.onreadystatechange = function () {
+        const DONE = 4, OK = 200;
+        if (clearReq.readyState === DONE) {
+            if (clearReq.status === OK) {
+
+            } else {
+                alert('Error: ' + clearReq.status); // Something went wrong trying to get the file if this happens!
+            }
+        }
+    };
+    clearReq.send(null);
+}

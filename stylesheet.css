@@ -4,10 +4,45 @@ body{
 }
 
 main{
-    margin: 0 25%;
+    margin: 0 20%;
     padding: 1rem 2rem 2rem 2rem;
     background-color: gainsboro;
     min-width: 40rem;
+
+}
+
+@media only screen and (max-width: 1000px) {
+    body{
+        overflow-y: scroll;
+    }
+    main{
+        margin: 0 auto;
+        width: 80%;
+        min-width: 0;
+        text-align: center;
+    }
+    header{
+        text-align: center;
+    }
+    p{
+        font-size: 20.5rem;
+    }
+    .articleStub{
+        min-height: 6rem;
+        flex: 1;
+    }
+    #ratings{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    #articleStub{
+        height: 10rem;
+    }
+    img{
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 header{
@@ -63,14 +98,15 @@ a{
     color: inherit;
 }
 
-#articleStub{
+.articleStub{
     height: 6rem;
-    vertical-align: middle;
+    margin: 1rem;
+    background-color: mistyrose;
 }
 
-#articleStub p{
-    line-height: 6rem;
-    background-color: mistyrose;
+.articleStub p{
+    padding: 1rem;
+    vertical-align: middle;
 }
 
 .thumbnail{
