@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <script src="RankArticles.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="HighContrast.js"></script>
     <title>BBC Coding Test | Rank articles</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto" rel="stylesheet">
+
 </head>
 <body onload="loadArticleStub(1)">
-<header>BBC news</header>
+<header><h1>HireMe News</h1><button onclick="toggleHighContrastMode()">Toggle High Contrast</button></header>
 <main>
     <h1 onload="clearXML()">What did you think of this article?</h1>
-        <article id="articleStub" class="articleStub"></article>
+    <article id="articleStub" class="articleStub"></article>
     <footer style="display: block; text-align: center">
         <section>
             <button class="rateButton" onclick="setRating(1)">&#9733</button>

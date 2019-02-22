@@ -32,7 +32,6 @@ function loadArticleStub(article) {
                 let i, availableImage = false;
                 for (i = 0; i < jsonData.body.length; i++) {
                     if (jsonData.body[i].type === "image" && !availableImage) {
-                        console.log('image found!');
                         availableImage = true;
                         var src = jsonData.body[i].model.url;        // Src of image
                         var alt = jsonData.body[i].model.altText;    // Alt tag of image

@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <script src="LoadRatings.js"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="HighContrast.js"></script>
     <title>BBC Coding Test | Your articles</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Roboto" rel="stylesheet">
+
 </head>
 <body onload="loadRatings()">
-<header>BBC news</header>
+<header><h1>HireMe News</h1><button onclick="toggleHighContrastMode()">Toggle High Contrast</button></header>
 <main>
     <h1>Here are your articles.</h1>
     <section id="ratings"></section>

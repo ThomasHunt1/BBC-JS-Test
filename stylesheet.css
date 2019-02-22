@@ -1,9 +1,26 @@
-body{
-    font-family: Arial, serif;
+body {
+    font-family: 'Roboto', sans-serif;
 
 }
 
-main{
+header {
+    font-family: 'Julius Sans One', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+header button{
+    margin: auto 0;
+    height: 4rem;
+    background-color: black;
+    color: yellow;
+}
+header button:hover{
+    background-color: yellow;
+    color: black;
+}
+
+main {
     margin: 0 20%;
     padding: 1rem 2rem 2rem 2rem;
     background-color: gainsboro;
@@ -12,40 +29,47 @@ main{
 }
 
 @media only screen and (max-width: 1000px) {
-    body{
+    body {
         overflow-y: scroll;
     }
-    main{
+
+    main {
         margin: 0 auto;
         width: 80%;
         min-width: 0;
         text-align: center;
     }
-    header{
+
+    header {
         text-align: center;
     }
-    p{
+
+    p {
         font-size: 20.5rem;
     }
-    .articleStub{
+
+    .articleStub {
         min-height: 6rem;
         flex: 1;
     }
-    #ratings{
+
+    #ratings {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
     }
-    #articleStub{
+
+    #articleStub {
         height: 10rem;
     }
-    img{
+
+    img {
         max-width: 100%;
         height: auto;
     }
 }
 
-header{
+header {
     color: white;
     background-color: firebrick;
     font-weight: bold;
@@ -53,31 +77,32 @@ header{
     width: 100%;
 }
 
-h1{
+h1 {
     font-size: 4rem;
 }
 
-P{
+P {
     font-size: 1.5rem;
 }
 
-ul,ol{
+ul, ol {
     border-radius: 5px;
     background-color: mistyrose;
     font-size: 1.5rem;
 }
-img{
+
+img {
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
-footer{
+footer {
     display: flex;
     justify-content: center;
     margin: 1rem;
 }
 
-button{
+button {
     font-size: 1.5rem;
     text-align: center;
     border: 1px solid black;
@@ -87,29 +112,29 @@ button{
     height: 3rem;
 }
 
-button:hover{
+button:hover {
     background-color: white;
     color: firebrick;
     transition-duration: 0.5s;
 }
 
-a{
+a {
     text-decoration: inherit;
     color: inherit;
 }
 
-.articleStub{
+.articleStub {
     height: 6rem;
     margin: 1rem;
     background-color: mistyrose;
 }
 
-.articleStub p{
+.articleStub p {
     padding: 1rem;
     vertical-align: middle;
 }
 
-.thumbnail{
+.thumbnail {
     width: 4rem;
     height: 4rem;
     float: left;
@@ -117,7 +142,7 @@ a{
     font-size: xx-small;
 }
 
-.rateButton{
+.rateButton {
     font-size: 2rem;
     text-align: center;
     vertical-align: center;
@@ -128,9 +153,9 @@ a{
     border: none;
 }
 
-.rateButton:focus, .rateButton:hover{
+.rateButton:focus, .rateButton:hover {
     border-radius: 50%;
-    background-color: white;
+    background-color: grey;
     color: gold;
     transition-duration: 0.5s;
     outline: 0;

@@ -15,8 +15,7 @@ function loadRatings() {
                     // Get rating data from XML
                     const article = returnedData.getElementsByTagName('article')[i];
                     const articleNo = article.childNodes[0].textContent;
-                    const rating = article.childNodes[1].textContent;
-                    ratesMap[articleNo] = rating;
+                    ratesMap[articleNo] = article.childNodes[1].textContent;
                 }
 
                 // Display the articles from best to worst
@@ -36,7 +35,6 @@ function loadRatings() {
 
 
 function displayArticleStub(currentArticle, rating) {
-    console.log('displaying article: ' + currentArticle);
     const xhr2 = new XMLHttpRequest();
 
     xhr2.open('get', 'articles/article-' + currentArticle + '.json');

@@ -96,9 +96,12 @@ function loadArticle(aNum) {
     document.title = "BBC Coding Test | Article " + aNum;
     document.getElementById('article').innerHTML = localStorage.getItem(aNum);
 
+    // Reapply the high contrast settings
+    toggleHighContrastMode();
+    toggleHighContrastMode();
+
     // Add footer to the html
     // Show the next button if there is another article
-    console.log('CA: '+currentArticle);
     if (currentArticle === 5) {
         document.getElementsByTagName('footer').item(0).innerHTML =
             '<button ><a href="rank.html">Rank articles</a></button>';
