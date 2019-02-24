@@ -6,13 +6,13 @@ function toggleHighContrastMode() {
         stubList = document.getElementsByClassName('articleStub'), i;
     if (!HCMode) {
         // Change colours to high contrast
-        document.body.style.backgroundColor = 'darkslategray';
+        document.body.style.backgroundColor = 'white';
         document.querySelector("main").style.backgroundColor = 'black';
         if (document.getElementById('articleStub') != null) {
             document.getElementById('articleStub').style.backgroundColor = 'black';
             document.getElementById('articleStub').style.border = "1px solid blue";
         }
-        document.body.style.color = 'yellow';
+        document.body.style.color = 'white';
 
         if (ulList.length > 0) {
             for (i = 0; i < ulList.length; i++) {

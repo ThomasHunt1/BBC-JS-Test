@@ -10,13 +10,13 @@ header {
 }
 
 header button{
-    margin: auto 0;
+    margin: auto 1rem;
     height: 4rem;
     background-color: black;
-    color: yellow;
+    color: white;
 }
 header button:hover{
-    background-color: yellow;
+    background-color: white;
     color: black;
 }
 
